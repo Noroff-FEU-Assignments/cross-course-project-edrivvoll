@@ -43,15 +43,15 @@ body {
 
 }
 
-.last_carousel {
-    margin-bottom: 70px;
+.last_carousel ul {
+    margin: 0;
 }
 
 header {
     background-color: #b8b8b8;
-    position: fixed;
     width: 100%;
-    z-index: 4;
+    position: sticky;
+    top: 0;
 }
 
 
@@ -133,8 +133,7 @@ main {
     background-color: #262626;
     background-blend-mode: overlay;
     align-items: center;
-    position: relative;
-    top: 70px;
+    margin: 0;
 
 }
 
@@ -144,13 +143,10 @@ main {
 }
 
 footer {
-    position: relative;
     background-color: #b8b8b8;
     text-align: center;
-    padding: 0.2em;
     font-size: 16px;
-    bottom: 0;
-    z-index: 2;
+    padding: 20px;
 }
 
 footer p {
@@ -177,7 +173,7 @@ h2 {
 p {
     font-size: 1rem;
     color: bisque;
-
+    margin: 0;
 
 }
 
