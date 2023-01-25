@@ -1,0 +1,236 @@
+@font-face {
+    font-family: "Sansation";
+    src: url(../fonts/Sansation-Regular.ttf);
+}
+
+
+
+body {
+    font-family: "Sansation", Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #262626;
+    box-sizing: border-box;
+}
+
+/* Test carousel. https://pawelgrzybek.com/a-simple-carousel-with-a-few-lines-of-css/ */
+
+
+.carousel ul {
+    display: flex;
+    list-style: none;
+
+    margin-inline: auto;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+
+}
+
+.carousel li {
+    display: grid;
+    place-items: center;
+    width: 75%;
+    padding-bottom: 30px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.carousel_img {
+    height: 300px;
+    border: solid 4px #b8b8b8;
+    border-radius: 20px;
+    box-shadow: 15px 15px 4px rgba(54, 54, 54, 0.333);
+
+}
+
+.last_carousel {
+    margin-bottom: 70px;
+}
+
+header {
+    background-color: #b8b8b8;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}
+
+
+.active {
+    background-color: #5e5e5e;
+    border-radius: 5px;
+}
+
+
+header a:hover {
+    text-decoration: underline;
+
+}
+
+.header_logo {
+    height: 50px;
+    padding: 10px 20px;
+    float: left;
+
+}
+
+nav,
+#menu-checkbox {
+    display: none;
+}
+
+#menu-checkbox:checked~nav {
+    display: inline-block;
+}
+
+.fa-bars {
+    float: right;
+    position: relative;
+    top: 15px;
+    right: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+
+
+}
+
+nav {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    border: solid black;
+    border-radius: 5px;
+}
+
+nav a {
+
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    background-color: #262626;
+
+
+
+}
+
+nav li {
+    list-style-type: none;
+    padding: 10px 20px;
+
+}
+
+main {
+    padding-bottom: 0;
+    background-image: url(../images/background_theatre_134kb.jpg);
+    background-position-y: -500px;
+    background-size: cover;
+    background-color: #262626;
+    background-blend-mode: overlay;
+    align-items: center;
+    position: relative;
+    top: 70px;
+
+}
+
+.hero-bg {
+    background-image: url(../images/background_product_165kb.jpg);
+    background-position: top;
+}
+
+footer {
+    position: relative;
+    background-color: #b8b8b8;
+    text-align: center;
+    padding: 0.2em;
+    font-size: 16px;
+    bottom: 0;
+    z-index: 2;
+}
+
+footer p {
+    font-size: 16px;
+    color: black;
+}
+
+h1 {
+    font-family: "Sansation";
+    font-weight: bolder;
+    margin: 0;
+    padding: 20px;
+    color: bisque;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+h2 {
+    color: #fff;
+    text-transform: capitalize;
+    margin-left: 3rem;
+}
+
+p {
+    font-size: 1rem;
+    color: bisque;
+
+
+}
+
+.movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media (min-width: 600px) {
+
+    .fa-bars,
+    #menu-checkbox,
+    .fa-solid,
+    input,
+    label {
+        display: none;
+    }
+
+    header {}
+
+    nav {
+        display: block;
+        position: static;
+        float: right;
+        border: none;
+
+        padding-top: 17px;
+
+    }
+
+    nav ul {
+        background-color: #b8b8b8;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: 10px;
+        padding: 10px 15px;
+    }
+
+    nav a {
+        color: #262626;
+    }
+
+    .movies {
+        display: grid;
+    }
+}
