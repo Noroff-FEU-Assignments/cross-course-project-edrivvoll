@@ -11,11 +11,10 @@ body {
     margin: 0;
     background-color: #262626;
     box-sizing: border-box;
+
 }
 
-/* Test carousel. https://pawelgrzybek.com/a-simple-carousel-with-a-few-lines-of-css/ */
-
-
+/* Carousel. https://pawelgrzybek.com/a-simple-carousel-with-a-few-lines-of-css/ */
 .carousel ul {
     display: flex;
     list-style: none;
@@ -129,12 +128,25 @@ main {
     padding-bottom: 0;
     background-image: url(../images/background_theatre_134kb.jpg);
     background-position-y: -500px;
-    background-size: cover;
+    background-size: 1000px;
     background-color: #262626;
     background-blend-mode: overlay;
     align-items: center;
     margin: 0;
+    min-height: calc(100vh - 70px - 48px)
+        /*header height and footer height*/
+}
 
+.cta {
+    text-transform: capitalize;
+    border: solid 3px rgba(184, 184, 184, 1);
+    border-radius: 15px;
+    padding: 20px 30px;
+    background-color: rgba(214, 71, 71, 1);
+    font-size: 24px;
+    color: #fff;
+    font-family: "sansation";
+    cursor: pointer;
 }
 
 .hero-bg {
@@ -228,5 +240,9 @@ p {
 
     .movies {
         display: grid;
+    }
+
+    main {
+        background-size: cover;
     }
 }
