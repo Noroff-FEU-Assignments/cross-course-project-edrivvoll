@@ -189,6 +189,28 @@ p {
 
 }
 
+.hero-p {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 1em;
+    font-weight: 800;
+    width: 330px;
+    letter-spacing: 3px;
+    text-align: center;
+    line-height: 40px;
+
+}
+
+.hero-button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 20px;
+}
+
 .movies {
     display: flex;
     flex-direction: column;
@@ -245,4 +267,50 @@ p {
     main {
         background-size: cover;
     }
+
+    .hero-p {
+        font-size: 2em;
+        width: 600px;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    /* Carousel start */
+    .carousel ul {
+        /* display: flex;
+        list-style: none;
+
+        margin-inline: auto;
+        overflow: auto;
+        scroll-snap-type: x mandatory; */
+        gap: 40px;
+    }
+
+    .carousel li {
+
+        flex-shrink: 1;
+
+    }
+
+    .carousel_img {
+        height: 250px;
+    }
+
+    .carousel_img:hover {
+        border: solid black 4px;
+        background-blend-mode: lighten;
+        background-color: #fff;
+
+    }
+
+    .last_carousel ul {
+        margin: 0;
+    }
+
+    .carousell-container {
+        padding: 150px 100px;
+    }
+
+    /* Carousel end */
+
 }
