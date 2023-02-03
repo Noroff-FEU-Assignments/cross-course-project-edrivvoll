@@ -186,6 +186,8 @@ h2 {
 
     text-transform: capitalize;
     margin-left: 3rem;
+    margin-top: 0;
+    padding-top: 20px;
 }
 
 p {
@@ -276,7 +278,41 @@ p {
     align-items: center;
 }
 
+/* Product page */
+.product_container {}
 
+.product_img {}
+
+.product_info {
+    border: solid var(--header-footer-bg-color) 4px;
+    border-radius: 10px;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    bottom: 60px;
+    margin: 0 10px;
+    background-color: var(--header-footer-color);
+
+}
+
+
+.product_info h2 {
+    margin: 0 0px;
+    padding: 0;
+}
+
+.product_main {
+    background-image: url(../images/Square_Eyes_Cover1.jpeg);
+    background-size: cover;
+    background-blend-mode: normal;
+    background-position: 0;
+}
+
+.product_main h1 {
+    display: none;
+}
+
+/* End product page */
 
 .clearfix::after {
     content: "";
@@ -286,11 +322,8 @@ p {
 
 @media (min-width: 600px) {
 
-    .fa-bars,
     #menu-checkbox,
     #menu-checkbox:checked,
-    .fa-solid,
-    .input_checkbox,
     #fa {
         display: none;
     }
