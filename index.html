@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My first website</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SquareEyes Home</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/5e248e42c9.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Hello world!</h1>
-    <p>Welcome to my first website.</p>
-    <h2>Web Security</h2>
-    <p id="web-security-question">How would you advise a potential client to secure his/her website from web security attacks? Note: the word count for your answer should not be greater than 250 words</p>
-    <p id="web-security-answer">I would inform the potential client that there are many different security attacks through a website. Some of the most common ways is Cross-site scripting XSS, SQL injection and Cross-site request forgery CSRF.
-    <ul>
-      <li>
-        Cross-site scripting XSS – This injects a harmful script through the browser. The script could send user login information to the attacker and the attacker could log in as that user.
-      </li>
-      <li>
-        SQL injection – Vulnerabilities in the SQL injection could make the attacker successfully run arbitrary SQL code on a database. With a successful attack the attacker could create new user with admin right and modify the server.
-      </li>
-      <li>
-        Cross-site request forgery CSRF – This is a method where the attacker uses the victim credentials without the victim knowing about it.
-      </li>
-    </ul>
-    I would also inform the client about other threats such as: Clickjacking, Denial of service, Directory traversal, File inclusion and Command injection.
-    <br>
-    Login should be with a 2-factor login such as OneLogin or Microsoft Authenticator. With a password and verifying with a pre-setup verified authenticator app.
-    <br>
-    I would have advice the client to take precaution of all these threats and configure the server with https encryption. This will encrypt the data between the client and server, making it harder for attackers to get the information.
-    </p>
+    <header class="clearfix">
+        <a href="index.html"
+          ><img
+            src="images/SquareEyes_Logo.png"
+            alt="SquareEyes Logo"
+            class="header_logo"
+        /></a>
+        <input type="checkbox" id="menu-checkbox" />
+        <label for="menu-checkbox"><i class="fa-solid fa-bars" id="fa"></i></i></label>
+        <nav>
+          <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+    <main class="hero-bg">
+      <section>
+        
+        <div>
+        <p class="hero-p">
+          Discover a great collections of movies and browse through different categories.
+        </p>
+        <a href="/movies.html"><button class="cta hero-button">get started!</button></a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright &copy;</p>
+    </footer>
   </body>
-  <footer><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_security" style="text-transform: uppercase;" target="_blank">Resources</a></footer>
 </html>

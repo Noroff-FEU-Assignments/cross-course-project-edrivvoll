@@ -1,0 +1,411 @@
+@font-face {
+    font-family: "Sansation";
+    src: url(../fonts/Sansation-Regular.ttf);
+}
+
+:root {
+    --header-footer-color: #262626;
+    --header-footer-bg-color: #b8b8b8;
+}
+
+
+body {
+    font-family: "Sansation", Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #262626;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+/* Carousel. https://pawelgrzybek.com/a-simple-carousel-with-a-few-lines-of-css/ */
+.carousel ul {
+    display: flex;
+    list-style: none;
+
+    margin-inline: auto;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+
+}
+
+.carousel li {
+    display: grid;
+    place-items: center;
+    width: 75%;
+    padding-bottom: 30px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.carousel_img {
+    height: 300px;
+    border: solid 4px var(--header-footer-bg-color);
+    border-radius: 20px;
+    box-shadow: 15px 15px 4px rgba(54, 54, 54, 0.333);
+
+}
+
+.last_carousel ul {
+    margin: 0;
+}
+
+.cut_img {
+    display: none;
+}
+
+header {
+    background-color: var(--header-footer-bg-color);
+    color: var(--header-footer-color);
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+
+.active {
+    background-color: #5e5e5e;
+    border-radius: 5px;
+}
+
+
+header a:hover {
+    text-decoration: underline;
+
+}
+
+.header_logo {
+    height: 50px;
+    padding: 10px 20px;
+    float: left;
+
+}
+
+nav,
+#menu-checkbox {
+    display: none;
+}
+
+#menu-checkbox:checked~nav {
+    display: inline-block;
+}
+
+.fa-bars {
+    float: right;
+    position: relative;
+    top: 15px;
+    right: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+nav {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    border: solid black;
+    border-radius: 5px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    background-color: #262626;
+
+
+
+}
+
+nav li {
+    list-style-type: none;
+    padding: 10px 20px;
+
+}
+
+main {
+    padding-bottom: 0;
+    background-image: url(../images/background_theatre_134kb.jpg);
+    background-position-y: -500px;
+    background-size: 1000px;
+    background-color: #262626;
+    background-blend-mode: overlay;
+    align-items: center;
+    margin: 0;
+    min-height: calc(100vh - 70px - 48px)
+        /*header height and footer height*/
+}
+
+.cta {
+    text-transform: capitalize;
+    border: solid 3px var(--header-footer-bg-color);
+    border-radius: 15px;
+    padding: 10px 30px;
+    background-color: rgba(214, 71, 71, 1);
+    font-size: 24px;
+    color: #fff;
+    font-family: "sansation";
+    cursor: pointer;
+}
+
+.hero-bg {
+    background-image: url(../images/background_product_165kb.jpg);
+    background-position: top;
+}
+
+footer {
+    background-color: #b8b8b8;
+    text-align: center;
+    font-size: 16px;
+    padding: 15px;
+}
+
+footer p {
+    font-size: 16px;
+    color: black;
+}
+
+h1 {
+    font-family: "Sansation";
+    font-weight: bolder;
+    margin: 0;
+    padding: 20px 0;
+
+
+    text-transform: capitalize;
+}
+
+h2 {
+
+    text-transform: capitalize;
+    margin-left: 3rem;
+}
+
+p {
+    font-size: 1rem;
+
+    margin: 0;
+
+}
+
+/* Start about section */
+.about-container {
+    display: grid;
+    grid-template-rows: 0.5fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+        ". . ."
+        ". a ."
+        ". a ."
+        ". a .";
+    line-height: 30px;
+}
+
+.about-container p {
+    padding: 10px 0;
+}
+
+.about-content {
+    grid-area: a;
+}
+
+/* End about section */
+
+/* Contact */
+
+.contact_container {
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 10px;
+
+}
+
+.contact_content {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    height: 80%;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.contact_container h1 {
+    text-align: left;
+    padding-top: 50px;
+}
+
+.contact_container .cta {
+    margin-top: 20px;
+}
+
+/* End Contact */
+
+.hero-p {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 1em;
+    font-weight: 800;
+    width: 330px;
+    letter-spacing: 3px;
+    text-align: center;
+    line-height: 40px;
+
+}
+
+.hero-button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 20px;
+}
+
+.movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media (min-width: 600px) {
+
+    .fa-bars,
+    #menu-checkbox,
+    #menu-checkbox:checked,
+    .fa-solid,
+    .input_checkbox,
+    #fa {
+        display: none;
+    }
+
+
+    header {}
+
+    nav {
+        display: block;
+        position: static;
+        float: right;
+        border: none;
+
+        padding-top: 17px;
+
+    }
+
+    nav ul {
+        background-color: #b8b8b8;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: 10px;
+        padding: 10px 15px;
+    }
+
+    nav a {
+        color: var(--header-footer-color);
+    }
+
+    .movies {
+        display: grid;
+    }
+
+    main {
+        background-size: cover;
+    }
+
+    .hero-p {
+        font-size: 2em;
+        width: 600px;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    /* Carousel start */
+    .carousel ul {
+        /* display: flex;
+        list-style: none;
+
+        margin-inline: auto;
+        overflow: auto;
+        scroll-snap-type: x mandatory; */
+        gap: 40px;
+    }
+
+    .carousel li {
+
+        flex-shrink: 1;
+
+    }
+
+    .carousel_img {
+        height: 200px;
+    }
+
+    .carousel_img:hover {
+        border: solid rgba(214, 71, 71, 1) 4px;
+        background-blend-mode: lighten;
+        background-color: #fff;
+        box-shadow: 15px 15px 4px rgba(139, 139, 139, 0.333);
+
+    }
+
+    .last_carousel ul {
+        margin: 0;
+    }
+
+    .carousell-container {
+        padding: 100px 100px;
+    }
+
+    .carousel h2 {
+        margin-left: 0;
+        font-size: 2.5rem;
+        text-decoration: underline;
+    }
+
+    .full_img {
+        display: none;
+    }
+
+    .cut_img {
+        display: block;
+    }
+
+    /* Carousel end */
+    /* Start about section */
+    .about-container {
+        grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+        grid-template-columns: 2fr 3fr 2fr;
+    }
+
+    .about-content {
+        max-width: 600px;
+    }
+
+    .about-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-container p {
+        font-size: 1.2rem;
+        /* End about section */
+    }
+
+}

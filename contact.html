@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SquareEyes Contact</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+    src="https://kit.fontawesome.com/5e248e42c9.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+  <header class="clearfix">
+      <a href="index.html"
+        ><img
+          src="images/SquareEyes_Logo.png"
+          alt="SquareEyes Logo"
+          class="header_logo"
+      /></a>
+      <input class="input_checkbox" type="checkbox" id="menu-checkbox" />
+      <label for="menu-checkbox"><i class="fa-solid fa-bars input_checkbox" id="fa"></i></i></label>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="active"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+  </header>
+    <main>
+      <section class="contact_container">
+        <h1>contact</h1>
+        
+            
+            <form action="submit.php" method="post">
+              
+              <label class="contact_content" for="name">Name:</label>
+              <input class="contact_content" type="text" id="name" name="name">
+              <label class="contact_content" for="email">E-mail:</label>
+              <input class="contact_content" type="email" id="email" name="email">
+              <label class="contact_content" for="subject">Subject:</label>
+              <input class="contact_content" type="text" id="subject" name="subject">
+              <label class="contact_content" for="message">Message:</label>
+              <textarea class="contact_content" name="textarea" id="message" cols="30" rows="10"></textarea>
+              <input type="submit" class="cta" value="Submit">
+          </form>
+          
+        </section>
+    </main>
+    <footer>
+      <p>Copyright &copy;</p>
+    </footer>
+  </body>
+</html>
