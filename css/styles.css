@@ -3,6 +3,10 @@
     src: url(../fonts/Sansation-Regular.ttf);
 }
 
+:root {
+    --header-footer-color: #262626;
+    --header-footer-bg-color: #b8b8b8;
+}
 
 
 body {
@@ -11,7 +15,7 @@ body {
     margin: 0;
     background-color: #262626;
     box-sizing: border-box;
-
+    color: #fff;
 }
 
 /* Carousel. https://pawelgrzybek.com/a-simple-carousel-with-a-few-lines-of-css/ */
@@ -36,7 +40,7 @@ body {
 
 .carousel_img {
     height: 300px;
-    border: solid 4px #b8b8b8;
+    border: solid 4px var(--header-footer-bg-color);
     border-radius: 20px;
     box-shadow: 15px 15px 4px rgba(54, 54, 54, 0.333);
 
@@ -51,7 +55,8 @@ body {
 }
 
 header {
-    background-color: #b8b8b8;
+    background-color: var(--header-footer-bg-color);
+    color: var(--header-footer-color);
     width: 100%;
     position: sticky;
     top: 0;
@@ -92,8 +97,6 @@ nav,
     right: 10px;
     padding: 10px;
     font-size: 1.5rem;
-
-
 }
 
 nav {
@@ -105,7 +108,6 @@ nav {
 }
 
 nav a {
-
     color: #fff;
     text-decoration: none;
     padding: 10px;
@@ -143,9 +145,9 @@ main {
 
 .cta {
     text-transform: capitalize;
-    border: solid 3px rgba(184, 184, 184, 1);
+    border: solid 3px var(--header-footer-bg-color);
     border-radius: 15px;
-    padding: 20px 30px;
+    padding: 10px 30px;
     background-color: rgba(214, 71, 71, 1);
     font-size: 24px;
     color: #fff;
@@ -175,20 +177,20 @@ h1 {
     font-weight: bolder;
     margin: 0;
     padding: 20px 0;
-    color: #fff;
+
 
     text-transform: capitalize;
 }
 
 h2 {
-    color: #fff;
+
     text-transform: capitalize;
     margin-left: 3rem;
 }
 
 p {
     font-size: 1rem;
-    color: #fff;
+
     margin: 0;
 
 }
@@ -215,6 +217,36 @@ p {
 }
 
 /* End about section */
+
+/* Contact */
+
+.contact_container {
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 10px;
+
+}
+
+.contact_content {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    height: 80%;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.contact_container h1 {
+    text-align: left;
+    padding-top: 50px;
+}
+
+.contact_container .cta {
+    margin-top: 20px;
+}
+
+/* End Contact */
 
 .hero-p {
     position: absolute;
@@ -245,6 +277,7 @@ p {
 }
 
 
+
 .clearfix::after {
     content: "";
     clear: both;
@@ -255,11 +288,13 @@ p {
 
     .fa-bars,
     #menu-checkbox,
+    #menu-checkbox:checked,
     .fa-solid,
-    input,
-    label {
+    .input_checkbox,
+    #fa {
         display: none;
     }
+
 
     header {}
 
@@ -284,7 +319,7 @@ p {
     }
 
     nav a {
-        color: #262626;
+        color: var(--header-footer-color);
     }
 
     .movies {
@@ -372,3 +407,5 @@ p {
         font-size: 1.2rem;
         /* End about section */
     }
+
+}
