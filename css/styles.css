@@ -149,17 +149,55 @@ main {
     border-radius: 15px;
     padding: 10px 30px;
     background-color: rgba(214, 71, 71, 1);
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
     font-family: "sansation";
     cursor: pointer;
 }
 
+
+/* Index layout start */
 .hero-bg {
     background-image: url(../images/background_product_165kb.jpg);
     background-position: top;
 }
 
+.hero-button {
+    margin-top: 30px;
+}
+
+.hero-p {
+    font-size: 1em;
+    font-weight: 800;
+    width: 330px;
+    letter-spacing: 3px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-rows: 2fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+        ". . ."
+        ". p ."
+        ". . .";
+    line-height: 30px;
+    height: 87vh;
+    align-content: center;
+}
+
+.hero-content {
+    grid-area: p;
+
+    text-align: center;
+
+}
+
+/* index layout end */
+
+/* Footer start */
 footer {
     background-color: #b8b8b8;
     text-align: center;
@@ -171,6 +209,8 @@ footer p {
     font-size: 16px;
     color: black;
 }
+
+/* footer end */
 
 h1 {
     font-family: "Sansation";
@@ -227,7 +267,10 @@ p {
     margin: 0 auto;
     text-align: center;
     padding: 0 10px;
+}
 
+textarea {
+    resize: none;
 }
 
 .contact_content {
@@ -249,28 +292,6 @@ p {
 }
 
 /* End Contact */
-
-.hero-p {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 1em;
-    font-weight: 800;
-    width: 330px;
-    letter-spacing: 3px;
-    text-align: center;
-    line-height: 40px;
-
-}
-
-.hero-button {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 20px;
-}
 
 .movies {
     display: flex;
@@ -310,6 +331,21 @@ p {
 
 .product_main h1 {
     display: none;
+}
+
+.price {
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.price::after {
+    content: ",-";
+}
+
+.imdb {
+    border: solid 2px var(--header-footer-bg-color);
+    border-radius: 10px;
+    height: 60px;
 }
 
 /* End product page */
@@ -438,7 +474,16 @@ p {
 
     .about-container p {
         font-size: 1.2rem;
-        /* End about section */
+
     }
+
+    /* End about section */
+
+    /* Contact start */
+    .contact_container {
+        max-width: 400px;
+    }
+
+    /* Contact end */
 
 }
