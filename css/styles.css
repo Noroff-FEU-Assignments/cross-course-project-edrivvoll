@@ -546,7 +546,7 @@ textarea {
         margin: 30px 30px 30px 15px;
         grid-area: info;
         display: grid;
-
+        align-content: center;
         align-items: center;
         grid-template-areas:
 
