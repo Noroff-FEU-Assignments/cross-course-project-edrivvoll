@@ -270,7 +270,12 @@ p {
     margin: 0 auto;
     text-align: center;
     padding: 0 10px;
+
 }
+
+.contact_form {}
+
+.contact_address {}
 
 textarea {
     resize: none;
@@ -283,6 +288,7 @@ textarea {
     height: 80%;
     margin: 10px 0;
     width: 100%;
+
 }
 
 .contact_container h1 {
@@ -326,15 +332,13 @@ textarea {
 
 
 .product_info h2 {
-    margin: 0 0px;
+    margin: 20px;
     padding: 0;
 }
 
 .product_info p {
     margin: 15px 0 0 5px;
 }
-
-
 
 .product_main h1 {
     display: none;
@@ -353,7 +357,7 @@ textarea {
 .rating_and_cta {
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.4fr;
     margin: 10px 0px;
 }
 
@@ -561,6 +565,7 @@ textarea {
 
     .product_info h2 {
         grid-area: h2;
+
     }
 
     .product_info p {
