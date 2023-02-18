@@ -154,6 +154,8 @@ main {
     color: #fff;
     font-family: "sansation";
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 
 
@@ -389,6 +391,42 @@ textarea {
 }
 
 /* End product page */
+
+/* Checkout page start */
+
+
+.checkout_form {
+    border: solid var(--header-footer-bg-color) 4px;
+    border-radius: 10px;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    bottom: 60px;
+    margin: 10px;
+    background-color: var(--header-footer-color);
+    width: -moz-available;
+    text-align: center;
+
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px;
+
+}
+
+.checkout_cta {
+    margin: 20px;
+}
+
+.checkout_form h1 {
+    display: contents;
+    padding: 100px
+}
+
+/* Checkout page end */
 
 .clearfix::after {
     content: "";
