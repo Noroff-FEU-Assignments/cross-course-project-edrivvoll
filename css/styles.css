@@ -430,6 +430,41 @@ fieldset {
 
 /* Checkout page end */
 
+/* Checkout success page start */
+
+.checkout_success {
+    filter: blur(4px) opacity(.5);
+}
+
+.box_success {
+    position: absolute;
+    filter: blur(0px) opacity(1);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: var(--header-footer-color);
+    text-align: center;
+    padding: 40px;
+    border: solid var(--header-footer-bg-color) 4px;
+    border-radius: 10px;
+    display: grid;
+    gap: 10px;
+    align-content: center;
+    height: 260px;
+    width: 200px;
+}
+
+.box_success img {
+    position: static;
+    max-height: 150px;
+    margin: 0 auto;
+
+}
+
+/* Checkout success page end */
+
 .clearfix::after {
     content: "";
     clear: both;
@@ -660,4 +695,12 @@ fieldset {
 
     /* Checkout page end */
 
+
+    /* Checkout success page start */
+    .box_success {
+        width: 400px;
+        height: 200px;
+    }
+
+    /* Checkout success page end */
 }
