@@ -44,7 +44,6 @@ body {
     border: solid 4px var(--header-footer-bg-color);
     border-radius: 20px;
     box-shadow: 15px 15px 4px rgba(54, 54, 54, 0.333);
-
 }
 
 .last_carousel ul {
@@ -79,7 +78,6 @@ header a:hover {
     height: 50px;
     padding: 10px 20px;
     float: left;
-
 }
 
 nav,
@@ -120,15 +118,12 @@ nav ul {
     padding: 0;
     float: right;
     background-color: #262626;
-
-
-
+    position: relative;
 }
 
 nav li {
     list-style-type: none;
     padding: 10px 20px;
-
 }
 
 main {
@@ -399,14 +394,14 @@ textarea {
     border: solid var(--header-footer-bg-color) 4px;
     border-radius: 10px;
     height: auto;
-    padding: 10px;
+    padding: 5px;
     position: absolute;
-    bottom: 60px;
+    bottom: 45px;
     margin: 10px;
     background-color: var(--header-footer-color);
     width: -moz-available;
-    text-align: center;
-
+    text-align: right;
+    display: grid;
 }
 
 fieldset {
@@ -414,16 +409,23 @@ fieldset {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin: 10px;
+    border-radius: 10px;
+    border: solid var(--header-footer-bg-color) 3px;
+}
 
+#fieldset-pay {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 15px;
 }
 
 .checkout_cta {
-    margin: 20px;
+    margin: 10px;
 }
 
 .checkout_form h1 {
-    display: contents;
-    padding: 100px
+    display: grid;
+    margin: 0 auto;
 }
 
 /* Checkout page end */
@@ -615,8 +617,6 @@ fieldset {
             "p"
             "price"
             "imdb_and_price"
-
-
         ;
     }
 
@@ -639,5 +639,25 @@ fieldset {
     }
 
     /* Product page end */
+
+    /* Checkout page start */
+
+    .checkout_form {
+        position: static;
+        margin: 30px 30px 30px 15px;
+        grid-area: info;
+        display: grid;
+        align-content: center;
+        align-items: center;
+        grid-template-areas:
+
+            "h2"
+            "p"
+            "price"
+            "imdb_and_price"
+        ;
+    }
+
+    /* Checkout page end */
 
 }
