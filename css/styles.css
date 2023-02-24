@@ -144,7 +144,7 @@ main {
     border: solid 3px var(--header-footer-bg-color);
     border-radius: 15px;
     padding: 10px 20px;
-    background-color: rgba(214, 71, 71, 1);
+    background-color: rgb(219, 58, 58);
     font-size: 20px;
     color: #fff;
     font-family: "sansation";
