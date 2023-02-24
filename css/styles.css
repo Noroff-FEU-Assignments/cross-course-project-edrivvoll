@@ -465,6 +465,7 @@ fieldset {
 
 /* Checkout success page end */
 
+
 .clearfix::after {
     content: "";
     clear: both;
