@@ -241,24 +241,19 @@ p {
 }
 
 /* Start about section */
-.about-container {
-    display: grid;
-    grid-template-rows: 0.5fr 2fr 2fr 2fr 1fr;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-areas:
-        ". . ."
-        ". a ."
-        ". a ."
-        ". a .";
-    line-height: 30px;
-}
 
-.about-container p {
+
+.about-content p {
     padding: 10px 0;
 }
 
 .about-content {
     grid-area: a;
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    margin: 0 auto;
+    padding: 5vh 20px;
 }
 
 /* End about section */
@@ -577,20 +572,16 @@ legend {
 
     /* Carousel end */
     /* Start about section */
-    .about-container {
-        grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
-        grid-template-columns: 2fr 3fr 2fr;
-    }
 
     .about-content {
         max-width: 600px;
     }
 
-    .about-container h1 {
+    .about-content h1 {
         font-size: 1.8rem;
     }
 
-    .about-container p {
+    .about-content p {
         font-size: 1.2rem;
 
     }
