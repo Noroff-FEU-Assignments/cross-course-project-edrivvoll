@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SquareEyes Checkout Page">
+    <meta name="description" content="SquareEyes Checkout Page" />
     <title>SquareEyes Checkout</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <script
-    src="https://kit.fontawesome.com/5e248e42c9.js"
-    crossorigin="anonymous"
-  ></script>
-</head>
-<body>
-  <header class="clearfix">
+      src="https://kit.fontawesome.com/5e248e42c9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="clearfix">
       <a href="../index.html"
         ><img
           src="../images/SquareEyes_Logo.png"
@@ -21,7 +21,9 @@
           class="header_logo"
       /></a>
       <input type="checkbox" id="menu-checkbox" />
-      <label for="menu-checkbox"><i class="fa-solid fa-bars" id="fa"></i></i></label>
+      <label for="menu-checkbox"
+        ><i class="fa-solid fa-bars" id="fa"></i
+      ></label>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -30,40 +32,42 @@
           <li><a href="../contact.html">Contact</a></li>
         </ul>
       </nav>
-  </header>
+    </header>
     <main class="product_main">
-        <div class="product_container">
-            <div class="product_img"></div>
-            <div class="checkout_form">
-                <h1>checkout</h1>
-                <form action="checkout.php" method="post">
-                <fieldset>
-                    <label class="" for="first-name">First name:</label>
-                    <input class="" type="text" id="first-name" name="first-name">
-                    <label class="" for="last-name">Last name:</label>
-                    <input class="" type="text" id="last-name" name="last-name">
-                    <label class="" for="email">E-mail:</label>
-                    <input class="" type="email" id="email" name="email">
-                    <label class="" for="phone">Phone number:</label>
-                    <input class="" type="tel" id="phone" name="phone">
-                </fieldset>
-                <fieldset>
-                    <label for="card-number">Card number:</label>
-                    <input type="text" id="card-number" name="card-number">
-                    <label for="card-name">Cardholder name:</label>
-                    <input type="text" id="card-name" name="card-name">
-                    <label for="expire">Expire date:</label>
-                    <input type="date" id="expire" name="expire">
-                    <label for="cvc">CVC:</label>
-                    <input type="text" id="cvc" name="cvc">
-                </fieldset>
-                <fieldset id="fieldset-pay">
-                <p>The card will be charged: <span class="price">nok 49</span></p>
-                <a href="/checkout_success.html" class="cta checkout_cta">Pay NOW</a>
-                </fieldset>
-            </form>
-          </div>
-      </div>    
+      <div class="product_container">
+        <div class="product_img"></div>
+        <div class="checkout_form">
+          <h1>checkout</h1>
+          <form action="checkout.php" method="post">
+            <fieldset>
+              <label class="" for="first-name">First name:</label>
+              <input class="" type="text" id="first-name" name="first-name" />
+              <label class="" for="last-name">Last name:</label>
+              <input class="" type="text" id="last-name" name="last-name" />
+              <label class="" for="email">E-mail:</label>
+              <input class="" type="email" id="email" name="email" />
+              <label class="" for="phone">Phone number:</label>
+              <input class="" type="tel" id="phone" name="phone" />
+            </fieldset>
+            <fieldset>
+              <label for="card-number">Card number:</label>
+              <input type="text" id="card-number" name="card-number" />
+              <label for="card-name">Cardholder name:</label>
+              <input type="text" id="card-name" name="card-name" />
+              <label for="expire">Expire date:</label>
+              <input type="date" id="expire" name="expire" />
+              <label for="cvc">CVC:</label>
+              <input type="text" id="cvc" name="cvc" />
+            </fieldset>
+            <fieldset id="fieldset-pay">
+              <p>The card will be charged: <span class="price">nok 49</span></p>
+              <a href="/checkout_success.html" class="cta checkout_cta"
+                >Pay NOW</a
+              >
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </main>
     <footer>
       <p>Copyright &copy;</p>

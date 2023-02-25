@@ -19,15 +19,13 @@ body {
     color: #fff;
 }
 
-/* Carousel. https://pawelgrzybek.com/a-simple-carousel-with-a-few-lines-of-css/ */
+/* Carousel  */
 .carousel ul {
     display: flex;
     list-style: none;
-
     margin-inline: auto;
     overflow: auto;
     scroll-snap-type: x mandatory;
-
 }
 
 .carousel li {
