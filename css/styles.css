@@ -274,7 +274,10 @@ p {
 .contact_address {
     margin: 60px 0;
     text-align: left;
+}
 
+.contact_address h2 {
+    margin-left: 0;
 }
 
 iframe {
@@ -697,4 +700,38 @@ legend {
     }
 
     /* Checkout success page end */
+}
+
+@media (min-width: 1000px) {
+    .contact_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "h1 h1"
+            "address form"
+        ;
+        max-width: 900px;
+        gap: 50px;
+    }
+
+    .contact_container h1 {
+        grid-area: h1;
+        text-align: center;
+        padding: 50px 0 0 0;
+        font-size: 1.8rem;
+    }
+
+    .contact_form {
+        grid-area: form;
+    }
+
+    .contact_address {
+        grid-area: address;
+        margin: 15px 0;
+    }
+
+    iframe {
+        height: 350px;
+    }
 }
