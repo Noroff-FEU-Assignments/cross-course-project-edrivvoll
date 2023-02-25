@@ -411,6 +411,10 @@ fieldset {
     border: solid var(--header-footer-bg-color) 3px;
 }
 
+legend {
+    display: none;
+}
+
 #fieldset-pay {
     grid-template-columns: 1fr;
     text-align: center;
