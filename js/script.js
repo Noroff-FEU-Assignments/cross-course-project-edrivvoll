@@ -44,10 +44,38 @@ async function makeApiCall(cont) {
         /* console.log(facts[i].title); */
 
 
-        /* if (facts[i].toLowerCase.gener === movieCategories[i].toLowerCase) {
+        /* if (facts[i].toLowerCase(gener) === movieCategories[i].toLowerCase) {
             console.log(facts[i].gener)
         } */
-        cont.innerHTML += `<li>
+
+        /* if (facts[i].genre) */
+        console.log(facts[i].genre.toLowerCase());
+/*  */  console.log(cont.className.split(" ")[0]);
+
+
+        if (facts[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
+            console.log("true")
+
+            cont.innerHTML += `<li>
+            <a href="products/product.html"
+            ><img
+                src="${facts[i].image}"
+                alt="${facts[i].title}"
+                class="carousel_img full_img" /><img
+                src="${facts[i].image}"
+                alt="${facts[i].title}"
+                class="carousel_img cut_img"
+            /></a>
+        </li>`
+
+
+        }
+        else {
+            console.log("false")
+        }
+
+
+        /* cont.innerHTML += `<li>
                                             <a href="products/product.html"
                                             ><img
                                                 src="${facts[i].image}"
@@ -57,7 +85,7 @@ async function makeApiCall(cont) {
                                                 alt="${facts[i].title}"
                                                 class="carousel_img cut_img"
                                             /></a>
-                                        </li>`
+                                        </li>`*/
     }
 
 }
