@@ -1,10 +1,12 @@
 
 
-const url = "https://api.noroff.dev/api/v1/square-eyes"
+const url = "https://api.noroff.dev/api/v1/square-eyes/"
 
 const carousellContainer = document.querySelector(".carousell-container")
 
 const movieCategories = ["top rated", "action", "comedy", "horror", "drama", "kids"]
+
+carousellContainer.innerHTML = "";
 
 function createCategories() {
 
@@ -14,6 +16,7 @@ function createCategories() {
                     <div class="carousel">
                         <h2>${movieCategories[i]}</h2>
                         <ul class="${movieCategories[i].replace(" ", "_")} carousel_ul" >
+                        Loading...
                         </ul>
                     </div>
         `
@@ -34,19 +37,22 @@ async function makeApiCall(cont) {
 
     const response = await fetch(url);
     const results = await response.json();
-    const facts = results;
 
-    for (let i = 0; i < facts.length; i++) {
-        if (facts[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
+    // console.log(results.forEach)
+
+    cont.innerHTML = "";
+
+    for (let i = 0; i < results.length; i++) {
+        if (results[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
             cont.innerHTML +=
                 `<li>
-                <a href="products/product.html">
+                <a href="products/product.html?id=${results[i].id}">
                 <img
-                    src="${facts[i].image}"
-                    alt="${facts[i].title}"
+                    src="${results[i].image}"
+                    alt="${results[i].title}"
                     class="carousel_img full_img" /><img
-                    src="${facts[i].image}"
-                    alt="${facts[i].title}"
+                    src="${results[i].image}"
+                    alt="${results[i].title}"
                     class="carousel_img cut_img"/>
                 </a>
                 </li>`
@@ -58,19 +64,18 @@ async function getTopRated() {
 
     const response = await fetch(url);
     const results = await response.json();
-    const facts = results;
 
-    for (let i = 0; i < facts.length; i++) {
-        if (parseFloat(facts[i].rating) >= 6) {
+    for (let i = 0; i < results.length; i++) {
+        if (parseFloat(results[i].rating) >= 6) {
             resultsContainerTopRatad.innerHTML +=
                 `<li>
-                <a href="products/product.html">
+                <a href="products/product.html?id=${results[i].id}">
                 <img
-                    src="${facts[i].image}"
-                    alt="${facts[i].title}"
+                    src="${results[i].image}"
+                    alt="${results[i].title}"
                     class="carousel_img full_img" /><img
-                    src="${facts[i].image}"
-                    alt="${facts[i].title}"
+                    src="${results[i].image}"
+                    alt="${results[i].title}"
                     class="carousel_img cut_img"/>
                 </a>
                </li>`
