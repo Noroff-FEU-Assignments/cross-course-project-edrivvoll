@@ -11,12 +11,11 @@ carousellContainer.innerHTML = "";
 function createCategories() {
 
     for (i = 0; i < movieCategories.length; i++) {
-        /* console.log(movieCategories[i].replace(" ", "_")) */
         carousellContainer.innerHTML += `
                     <div class="carousel">
                         <h2>${movieCategories[i]}</h2>
                         <ul class="${movieCategories[i].replace(" ", "_")} carousel_ul" >
-                        Loading...
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                         </ul>
                     </div>
         `
@@ -38,12 +37,11 @@ async function makeApiCall(cont) {
     const response = await fetch(url);
     const results = await response.json();
 
-    // console.log(results.forEach)
-
     cont.innerHTML = "";
 
     for (let i = 0; i < results.length; i++) {
         if (results[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
+
             cont.innerHTML +=
                 `<li>
                 <a href="products/product.html?id=${results[i].id}">
@@ -65,6 +63,8 @@ async function getTopRated() {
     const response = await fetch(url);
     const results = await response.json();
 
+    resultsContainerTopRatad.innerHTML = "";
+
     for (let i = 0; i < results.length; i++) {
         if (parseFloat(results[i].rating) >= 6) {
             resultsContainerTopRatad.innerHTML +=
@@ -84,12 +84,12 @@ async function getTopRated() {
     }
 }
 
-getTopRated();
 
+createCarousel()
 // ------------------------------------------------------
 
 function createCarousel() {
-    makeApiCall(resultsContainerTopRatad);
+    getTopRated();
     makeApiCall(resultsContainerAction);
     makeApiCall(resultsContainerComedy);
     makeApiCall(resultsContainerHorror);
@@ -100,6 +100,8 @@ function createCarousel() {
 // -------------------------------------------------
 
 
-createCarousel()
 
-console.log()
+/* getTopRated(); */
+
+
+

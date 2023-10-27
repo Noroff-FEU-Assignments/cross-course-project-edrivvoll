@@ -12,14 +12,16 @@ const url = "https://api.noroff.dev/api/v1/square-eyes/" + id;
 
 async function fetchProduct() {
 
-    const response = await fetch(url);
+  productMain.innerHTML = `<div class="lds-ring"><div></div><div></div><div></div><div></div></div>`;
 
-    const json = await response.json();
+  const response = await fetch(url);
 
-    // console.log(json);
+  const json = await response.json();
 
-    productMain.innerHTML +=
-        `
+  // console.log(json);
+
+  productMain.innerHTML =
+    `
     <h1>product</h1>
       <div class="product_container">
         <div class="product_img" style="background-image: url(${json.image})"></div>
@@ -27,10 +29,14 @@ async function fetchProduct() {
           <h2 class="h2">${json.title}</h2>
           <p class="p">
           ${json.description}
+          <br>
+          <br>
+          Genre: ${json.genre}<br>
+          Released: ${json.released}
           </p>
           <p class="price">${json.price}</p>
           <div class="rating_and_cta">
-            <img src="../images/imdb.jpg" alt="IMDB rating" class="imdb" />
+            <div class="imdb">Rating: ${json.rating}</div>
             <a href="../checkout.html" class="cta product_cta">Watch NOW</a>
           </div>
         </div>
