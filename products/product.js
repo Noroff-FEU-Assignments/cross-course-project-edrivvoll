@@ -6,19 +6,12 @@ const params = new URLSearchParams(querryString);
 
 const id = params.get("id");
 
-console.log(id)
-
 const url = "https://api.noroff.dev/api/v1/square-eyes/" + id;
 
 async function fetchProduct() {
-
-  productMain.innerHTML = `<div class="lds-ring"><div></div><div></div><div></div><div></div></div>`;
-
+  productMain.innerHTML = "";
   const response = await fetch(url);
-
   const json = await response.json();
-
-  // console.log(json);
 
   productMain.innerHTML =
     `

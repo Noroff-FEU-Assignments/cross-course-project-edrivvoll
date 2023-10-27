@@ -15,10 +15,10 @@ function createCategories() {
                     <div class="carousel">
                         <h2>${movieCategories[i]}</h2>
                         <ul class="${movieCategories[i].replace(" ", "_")} carousel_ul" >
-                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                        <li><div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                         </ul>
                     </div>
-        `
+        ` /* Loading wheel from https://loading.io/css/ */
     }
 }
 
@@ -33,11 +33,10 @@ const resultsContainerDrama = document.querySelector(".drama");
 const resultsContainerForKids = document.querySelector(".kids");
 
 async function makeApiCall(cont) {
-
     const response = await fetch(url);
     const results = await response.json();
 
-    cont.innerHTML = "";
+    cont.innerHTML = `<div class="lds - ring"><div></div><div></div><div></div><div></div></div>`;
 
     for (let i = 0; i < results.length; i++) {
         if (results[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
@@ -56,6 +55,13 @@ async function makeApiCall(cont) {
                 </li>`
         }
     }
+    /* try {
+        
+    } catch (error) {
+        cont.innerHTML = displayError();
+    } */
+
+
 }
 
 async function getTopRated() {
