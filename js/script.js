@@ -59,15 +59,7 @@ async function makeApiCall(cont) {
     }
     catch (error) {
         cont.innerHTML = displayError();
-        console.log("not ok")
     }
-    /* try {
-        
-    } catch (error) {
-        cont.innerHTML = displayError();
-    } */
-
-
 }
 
 async function getTopRated() {
@@ -92,7 +84,6 @@ async function getTopRated() {
                 </a>
                </li>`
             }
-
         }
     }
     catch (error) {
@@ -113,10 +104,5 @@ function createCarousel() {
 }
 
 // -------------------------------------------------
-
-
-
-/* getTopRated(); */
-
 
 
