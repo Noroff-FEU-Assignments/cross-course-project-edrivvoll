@@ -519,6 +519,13 @@ legend {
     }
 }
 
+.error {
+    border: 2px solid red;
+    padding: 1rem;
+    color: red;
+    background: rgba(214, 71, 71, 0.1);
+}
+
 /* End loading wheel */
 
 @media (min-width: 600px) {

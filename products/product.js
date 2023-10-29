@@ -1,3 +1,4 @@
+
 const productMain = document.querySelector(".product_main");
 
 const querryString = document.location.search;
@@ -8,13 +9,18 @@ const id = params.get("id");
 
 const url = "https://api.noroff.dev/api/v1/square-eyes/" + id;
 
-async function fetchProduct() {
-  productMain.innerHTML = "";
-  const response = await fetch(url);
-  const json = await response.json();
 
-  productMain.innerHTML =
-    `
+async function fetchProduct() {
+
+  try {
+
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log(json)
+    productMain.innerHTML = "";
+
+    productMain.innerHTML =
+      `
     <h1>product</h1>
       <div class="product_container">
         <div class="product_img" style="background-image: url(${json.image})"></div>
@@ -35,6 +41,13 @@ async function fetchProduct() {
         </div>
       </div>
     `
+    console.log("ok");
+  } catch (error) {
+    productMain.innerHTML = displayError();
+    console.log("not ok")
+  }
+
+
 
 }
 

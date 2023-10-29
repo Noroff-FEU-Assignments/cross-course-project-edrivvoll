@@ -33,16 +33,17 @@ const resultsContainerDrama = document.querySelector(".drama");
 const resultsContainerForKids = document.querySelector(".kids");
 
 async function makeApiCall(cont) {
-    const response = await fetch(url);
-    const results = await response.json();
+    try {
+        const response = await fetch(url);
+        const results = await response.json();
 
-    cont.innerHTML = `<div class="lds - ring"><div></div><div></div><div></div><div></div></div>`;
+        cont.innerHTML = `<div class="lds - ring"><div></div><div></div><div></div><div></div></div>`;
 
-    for (let i = 0; i < results.length; i++) {
-        if (results[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
+        for (let i = 0; i < results.length; i++) {
+            if (results[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
 
-            cont.innerHTML +=
-                `<li>
+                cont.innerHTML +=
+                    `<li>
                 <a href="products/product.html?id=${results[i].id}">
                 <img
                     src="${results[i].image}"
@@ -53,7 +54,12 @@ async function makeApiCall(cont) {
                     class="carousel_img cut_img"/>
                 </a>
                 </li>`
+            }
         }
+    }
+    catch (error) {
+        cont.innerHTML = displayError();
+        console.log("not ok")
     }
     /* try {
         
@@ -65,16 +71,16 @@ async function makeApiCall(cont) {
 }
 
 async function getTopRated() {
+    try {
+        const response = await fetch(url);
+        const results = await response.json();
 
-    const response = await fetch(url);
-    const results = await response.json();
+        resultsContainerTopRatad.innerHTML = "";
 
-    resultsContainerTopRatad.innerHTML = "";
-
-    for (let i = 0; i < results.length; i++) {
-        if (parseFloat(results[i].rating) >= 6) {
-            resultsContainerTopRatad.innerHTML +=
-                `<li>
+        for (let i = 0; i < results.length; i++) {
+            if (parseFloat(results[i].rating) >= 6) {
+                resultsContainerTopRatad.innerHTML +=
+                    `<li>
                 <a href="products/product.html?id=${results[i].id}">
                 <img
                     src="${results[i].image}"
@@ -85,11 +91,14 @@ async function getTopRated() {
                     class="carousel_img cut_img"/>
                 </a>
                </li>`
-        }
+            }
 
+        }
+    }
+    catch (error) {
+        resultsContainerTopRatad.innerHTML = displayError();
     }
 }
-
 
 createCarousel()
 // ------------------------------------------------------
