@@ -60,6 +60,7 @@ async function makeApiCall(cont) {
     catch (error) {
         cont.innerHTML = displayError();
     }
+
 }
 
 async function getTopRated() {

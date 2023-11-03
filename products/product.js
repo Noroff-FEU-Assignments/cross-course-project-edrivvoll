@@ -15,6 +15,7 @@ async function fetchProduct() {
     const response = await fetch(url);
     const json = await response.json();
 
+    document.title += `SquareEyes - ${json.title}`;
     productMain.innerHTML = "";
     productMain.innerHTML =
       `
