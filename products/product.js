@@ -9,6 +9,12 @@ async function fetchProduct() {
     const response = await fetch(url);
     const json = await response.json();
     document.title += `SquareEyes - ${json.title}`;
+
+    price = json.price;
+    if (json.onSale) {
+      price = json.discountedPrice;
+    }
+
     productMain.innerHTML = "";
     productMain.innerHTML = `
     <h1>product</h1>
@@ -23,7 +29,7 @@ async function fetchProduct() {
           Genre: ${json.genre}<br>
           Released: ${json.released}
           </p>
-          <p class="price">${json.price}</p>
+          <p class="price">NOK: ${price}</p>
           <div class="rating_and_cta">
             <div class="imdb">Rating: ${json.rating}</div>
             <a href="../checkout.html" class="cta product_cta">Watch NOW</a>
