@@ -1,15 +1,9 @@
-
-
 const url = "https://api.noroff.dev/api/v1/square-eyes/"
-
 const carousellContainer = document.querySelector(".carousell-container")
-
 const movieCategories = ["top rated", "action", "comedy", "horror", "drama", "kids"]
-
 carousellContainer.innerHTML = "";
 
 function createCategories() {
-
     for (i = 0; i < movieCategories.length; i++) {
         carousellContainer.innerHTML += `
                     <div class="carousel">
@@ -17,13 +11,11 @@ function createCategories() {
                         <ul class="${movieCategories[i].replace(" ", "_")} carousel_ul" >
                         <li><div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                         </ul>
-                    </div>
-        ` /* Loading wheel from https://loading.io/css/ */
+                    </div>` /* Loading wheel from https://loading.io/css/ */
     }
 }
 
 createCategories();
-
 
 const resultsContainerTopRatad = document.querySelector(".top_rated");
 const resultsContainerAction = document.querySelector(".action");
@@ -36,14 +28,12 @@ async function makeApiCall(cont) {
     try {
         const response = await fetch(url);
         const results = await response.json();
-
         cont.innerHTML = `<div class="lds - ring"><div></div><div></div><div></div><div></div></div>`;
 
         for (let i = 0; i < results.length; i++) {
             if (results[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
-
-                cont.innerHTML +=
-                    `<li>
+                cont.innerHTML += `
+                <li>
                 <a href="products/product.html?id=${results[i].id}">
                 <img
                     src="${results[i].image}"
@@ -60,20 +50,18 @@ async function makeApiCall(cont) {
     catch (error) {
         cont.innerHTML = displayError();
     }
-
 }
 
 async function getTopRated() {
     try {
         const response = await fetch(url);
         const results = await response.json();
-
         resultsContainerTopRatad.innerHTML = "";
 
         for (let i = 0; i < results.length; i++) {
             if (parseFloat(results[i].rating) >= 6) {
-                resultsContainerTopRatad.innerHTML +=
-                    `<li>
+                resultsContainerTopRatad.innerHTML += `
+                <li>
                 <a href="products/product.html?id=${results[i].id}">
                 <img
                     src="${results[i].image}"
@@ -93,7 +81,6 @@ async function getTopRated() {
 }
 
 createCarousel()
-// ------------------------------------------------------
 
 function createCarousel() {
     getTopRated();
@@ -103,7 +90,3 @@ function createCarousel() {
     makeApiCall(resultsContainerDrama);
     makeApiCall(resultsContainerForKids);
 }
-
-// -------------------------------------------------
-
-
