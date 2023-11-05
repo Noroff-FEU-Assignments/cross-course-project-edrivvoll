@@ -80,8 +80,6 @@ async function getTopRated() {
     }
 }
 
-createCarousel()
-
 function createCarousel() {
     getTopRated();
     makeApiCall(resultsContainerAction);
@@ -90,3 +88,5 @@ function createCarousel() {
     makeApiCall(resultsContainerDrama);
     makeApiCall(resultsContainerForKids);
 }
+
+createCarousel()
