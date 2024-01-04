@@ -705,6 +705,7 @@ legend {
             "p"
             "price"
             "imdb_and_price"
+            "back"
         ;
     }
 
@@ -724,6 +725,12 @@ legend {
 
     .product_info .imdb_and_cta {
         grid-area: imdb_and_cta;
+    }
+
+    .back {
+        grid-area: back;
+        text-align: center;
+        margin-top: 40px;
     }
 
     /* Product page end */

@@ -34,6 +34,9 @@ async function fetchProduct() {
             <div class="imdb">Rating: ${json.rating}</div>
             <a href="../checkout.html" class="cta product_cta">Watch NOW</a>
           </div>
+          <div class="back">
+            <a href="../movies.html" class="back cta">Back</a>
+          </div>
         </div>
       </div>`
   } catch (error) {
