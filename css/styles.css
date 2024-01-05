@@ -384,6 +384,12 @@ textarea {
     padding: auto;
 }
 
+.back {
+    grid-area: back;
+    text-align: center;
+    margin: 30px 0;
+}
+
 /* End product page */
 
 /* Checkout page start */
@@ -725,12 +731,6 @@ legend {
 
     .product_info .imdb_and_cta {
         grid-area: imdb_and_cta;
-    }
-
-    .back {
-        grid-area: back;
-        text-align: center;
-        margin-top: 40px;
     }
 
     /* Product page end */
