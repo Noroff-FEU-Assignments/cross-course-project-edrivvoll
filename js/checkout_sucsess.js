@@ -1,42 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SquareEyes Checkout Success Page" />
-    <title>SquareEyes Checkout Success</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/5e248e42c9.js"
-      crossorigin="anonymous"
-    ></script>
-    
-  </head>
-  <body>
-    <header class="clearfix">
-      <a href="../index.html"
-        ><img
-          src="../images/SquareEyes_Logo.png"
-          alt="SquareEyes Logo"
-          class="header_logo"
-      /></a>
-      <input type="checkbox" id="menu-checkbox" />
-      <label for="menu-checkbox" aria-labelledby="menu-checkbox"
-        ><i class="fa-solid fa-bars" id="fa"></i
-      ></label>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../movies.html">Movies</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="product_main checkout_main">
-      <!-- <div class="product_container checkout_success">
-        <div class="product_img"></div>
+const productMain = document.querySelector(".product_main");
+const querryString = document.location.search;
+const params = new URLSearchParams(querryString);
+const id = params.get("id");
+const url = "https://api.noroff.dev/api/v1/square-eyes/" + id;
+
+async function fetchProduct() {
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        document.title += `SquareEyes - ${json.title} - Checkout`;
+
+        price = json.price;
+        if (json.onSale) {
+            price = json.discountedPrice;
+        }
+
+        productMain.innerHTML = "";
+        productMain.innerHTML = `
+        <div class="product_container checkout_success">
+        <div class="product_img" style="background-image: url(${json.image})"></div>
         <div class="checkout_form">
           <h1>checkout</h1>
           <form action="checkout.php" method="post">
@@ -74,13 +56,10 @@
         <img src="/images/check_sign.jpg" alt="green check sign" />
         <p>Payment sucsessfull!</p>
         <a href="/index.html" class="cta">Start Watching</a>
-      </div> -->
-    </main>
-    <footer>
-      <p>Copyright &copy;</p>
-    </footer>
-    <script src="/js/checkout_formValidation.js"></script>
-    <script src="/js/components/displayError.js"></script>
-    <script src="/js/checkout_sucsess.js"></script>
-  </body>
-</html>
+      </div>`
+    } catch (error) {
+        productMain.innerHTML = displayError();
+    }
+}
+
+fetchProduct();

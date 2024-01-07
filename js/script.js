@@ -1,11 +1,11 @@
 const url = "https://api.noroff.dev/api/v1/square-eyes/"
-const carousellContainer = document.querySelector(".carousell-container")
+const carouselContainer = document.querySelector(".carousel-container")
 const movieCategories = ["top rated", "action", "comedy", "horror", "drama", "kids"]
-carousellContainer.innerHTML = "";
+carouselContainer.innerHTML = "";
 
 function createCategories() {
     for (i = 0; i < movieCategories.length; i++) {
-        carousellContainer.innerHTML += `
+        carouselContainer.innerHTML += `
                     <div class="carousel">
                         <h2>${movieCategories[i]}</h2>
                         <ul class="${movieCategories[i].replace(" ", "_")} carousel_ul" >
