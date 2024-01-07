@@ -8,7 +8,7 @@ async function fetchProduct() {
   try {
     const response = await fetch(url);
     const json = await response.json();
-    document.title += `SquareEyes - ${json.title}`;
+    document.title = `SquareEyes - ${json.title}`;
 
     price = json.price;
     if (json.onSale) {
@@ -19,7 +19,7 @@ async function fetchProduct() {
     productMain.innerHTML = `
     <h1>product</h1>
       <div class="product_container">
-        <div class="product_img" style="background-image: url(${json.image})"></div>
+        <div class="product_img" title="${json.title} ${json.description} NOK: ${json.price},-" style="background-image: url(${json.image})"></div>
         <div class="product_info">
           <h2 class="h2">${json.title}</h2>
           <p class="p">

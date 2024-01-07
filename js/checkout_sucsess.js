@@ -8,7 +8,7 @@ async function fetchProduct() {
     try {
         const response = await fetch(url);
         const json = await response.json();
-        document.title += `SquareEyes - ${json.title} - Checkout`;
+        document.title = `SquareEyes - ${json.title} - Checkout`;
 
         price = json.price;
         if (json.onSale) {

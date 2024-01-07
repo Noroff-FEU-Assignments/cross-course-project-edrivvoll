@@ -38,10 +38,10 @@ async function makeApiCall(cont) {
                 <img
                     src="${results[i].image}"
                     alt="${results[i].title}"
-                    class="carousel_img full_img" /><img
+                    class="carousel_img full_img" title="${results[i].title}. ${results[i].description} NOK: ${results[i].price},-"/><img
                     src="${results[i].image}"
                     alt="${results[i].title}"
-                    class="carousel_img cut_img"/>
+                    class="carousel_img cut_img" title="${results[i].title}. ${results[i].description} NOK: ${results[i].price},-"/>
                 </a>
                 </li>`
             }
@@ -66,10 +66,10 @@ async function getTopRated() {
                 <img
                     src="${results[i].image}"
                     alt="${results[i].title}"
-                    class="carousel_img full_img" /><img
+                    class="carousel_img full_img" title="${results[i].title}. ${results[i].description} NOK: ${results[i].price},-"/><img
                     src="${results[i].image}"
                     alt="${results[i].title}"
-                    class="carousel_img cut_img"/>
+                    class="carousel_img cut_img" title="${results[i].title}. ${results[i].description} NOK: ${results[i].price},-"/>
                 </a>
                </li>`
             }
