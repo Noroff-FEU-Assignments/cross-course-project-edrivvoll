@@ -30,18 +30,26 @@ async function makeApiCall(cont) {
         const results = await response.json();
         cont.innerHTML = `<div class="lds - ring"><div></div><div></div><div></div><div></div></div>`;
 
+
+
         for (let i = 0; i < results.length; i++) {
             if (results[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
+
+                price = results[i].price
+                if (results[i].onSale) {
+                    price = results[i].discountedPrice
+                }
+
                 cont.innerHTML += `
                 <li>
                 <a href="products/product.html?id=${results[i].id}">
                 <img
                     src="${results[i].image}"
                     alt="${results[i].title}"
-                    class="carousel_img full_img" title="${results[i].title}. ${results[i].description} NOK: ${results[i].price},-"/><img
+                    class="carousel_img full_img" title="${results[i].title}. ${results[i].description} NOK: ${price},-"/><img
                     src="${results[i].image}"
                     alt="${results[i].title}"
-                    class="carousel_img cut_img" title="${results[i].title}. ${results[i].description} NOK: ${results[i].price},-"/>
+                    class="carousel_img cut_img" title="${results[i].title}. ${results[i].description} NOK: ${price},-"/>
                 </a>
                 </li>`
             }
@@ -60,16 +68,22 @@ async function getTopRated() {
 
         for (let i = 0; i < results.length; i++) {
             if (parseFloat(results[i].rating) >= 6) {
+
+                price = results[i].price
+                if (results[i].onSale) {
+                    price = results[i].discountedPrice
+                }
+
                 resultsContainerTopRatad.innerHTML += `
                 <li>
                 <a href="products/product.html?id=${results[i].id}">
                 <img
                     src="${results[i].image}"
                     alt="${results[i].title}"
-                    class="carousel_img full_img" title="${results[i].title}. ${results[i].description} NOK: ${results[i].price},-"/><img
+                    class="carousel_img full_img" title="${results[i].title}. ${results[i].description} NOK: ${price},-"/><img
                     src="${results[i].image}"
                     alt="${results[i].title}"
-                    class="carousel_img cut_img" title="${results[i].title}. ${results[i].description} NOK: ${results[i].price},-"/>
+                    class="carousel_img cut_img" title="${results[i].title}. ${results[i].description} NOK: ${price},-"/>
                 </a>
                </li>`
             }
