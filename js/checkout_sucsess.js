@@ -2,23 +2,23 @@ const productMain = document.querySelector(".product_main");
 const querryString = document.location.search;
 const params = new URLSearchParams(querryString);
 const id = params.get("id");
-const url = "https://api.noroff.dev/api/v1/square-eyes/" + id;
+const url = "http://cms-ca.local/wp-json/wc/store/products/" + id;
 
 async function fetchProduct() {
     try {
         const response = await fetch(url);
         const json = await response.json();
-        document.title = `SquareEyes - ${json.title} - Checkout`;
+        document.title = `SquareEyes - ${json.name} - Checkout`;
 
-        price = json.price;
-        if (json.onSale) {
-            price = json.discountedPrice;
-        }
+        price = json.prices.price / 100;
+    if (json.onSale) {
+      price = json.prices.sale_price;
+    }
 
         productMain.innerHTML = "";
         productMain.innerHTML = `
         <div class="product_container checkout_success">
-        <div class="product_img" style="background-image: url(${json.image})"></div>
+        <div class="product_img" style="background-image: url(${json.images[0].src})"></div>
         <div class="checkout_form">
           <h1>checkout</h1>
           <form action="checkout.php" method="post">
