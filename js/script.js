@@ -1,4 +1,4 @@
-const url = "https://api.noroff.dev/api/v1/square-eyes/"
+const url = "http://cms-ca.local/wp-json/wc/store/products/"
 const carouselContainer = document.querySelector(".carousel-container")
 const movieCategories = ["top rated", "action", "comedy", "horror", "drama", "kids"]
 carouselContainer.innerHTML = "";
@@ -29,29 +29,30 @@ async function makeApiCall(cont) {
         const response = await fetch(url);
         const results = await response.json();
         cont.innerHTML = `<div class="lds - ring"><div></div><div></div><div></div><div></div></div>`;
-
+        console.log(results)
+        
 
 
         for (let i = 0; i < results.length; i++) {
-            if (results[i].genre.toLowerCase() === cont.className.split(" ")[0]) {
-
-                price = results[i].price
+            if (results[i].attributes[0].terms[0].name.toLowerCase() === cont.className.split(" ")[0]) {
+                console.log(results[i])
+                
+                /* price = results[i].price
                 if (results[i].onSale) {
                     price = results[i].discountedPrice
-                }
-
+                } */
+                
                 cont.innerHTML += `
                 <li>
                 <a href="products/product.html?id=${results[i].id}">
-                <img
-                    src="${results[i].image}"
-                    alt="${results[i].title}"
-                    class="carousel_img full_img" title="${results[i].title}. ${results[i].description} NOK: ${price},-"/><img
-                    src="${results[i].image}"
-                    alt="${results[i].title}"
-                    class="carousel_img cut_img" title="${results[i].title}. ${results[i].description} NOK: ${price},-"/>
-                </a>
-                </li>`
+                <img src="${results[i].images[0].src}"
+            alt = "${results[i].name}"
+            class="carousel_img full_img" title = "${results[i].name}. ${results[i].description} NOK: ${results[i].prices.price},-" /> <img
+                src="${results[i].images[0].src}"
+                alt="${results[i].name}"
+                class="carousel_img cut_img" title="${results[i].name}. ${results[i].description} NOK: ${results[i].prices.price},-" />
+                </a >
+                </li > `
             }
         }
     }
@@ -67,25 +68,25 @@ async function getTopRated() {
         resultsContainerTopRatad.innerHTML = "";
 
         for (let i = 0; i < results.length; i++) {
-            if (parseFloat(results[i].rating) >= 6) {
+            if (parseFloat(results[i].attributes[1].terms[0].name) >= 6) {
 
-                price = results[i].price
+                price = results[i].prices.price
                 if (results[i].onSale) {
-                    price = results[i].discountedPrice
+                    price = results[i].prices.sale_price
                 }
 
                 resultsContainerTopRatad.innerHTML += `
                 <li>
                 <a href="products/product.html?id=${results[i].id}">
-                <img
-                    src="${results[i].image}"
-                    alt="${results[i].title}"
-                    class="carousel_img full_img" title="${results[i].title}. ${results[i].description} NOK: ${price},-"/><img
-                    src="${results[i].image}"
-                    alt="${results[i].title}"
-                    class="carousel_img cut_img" title="${results[i].title}. ${results[i].description} NOK: ${price},-"/>
+                    <img
+                        src="${results[i].images[0].src}"
+                        alt="${results[i].title}"
+                        class="carousel_img full_img" title="${results[i].name}. ${results[i].description} NOK: ${price},-" /><img
+                        src="${results[i].images[0].src}"
+                        alt="${results[i].title}"
+                        class="carousel_img cut_img" title="${results[i].name}. ${results[i].description} NOK: ${price},-" />
                 </a>
-               </li>`
+               </li> `
             }
         }
     }
