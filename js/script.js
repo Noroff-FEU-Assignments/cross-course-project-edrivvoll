@@ -29,13 +29,9 @@ async function makeApiCall(cont) {
         const response = await fetch(url);
         const results = await response.json();
         cont.innerHTML = `<div class="lds - ring"><div></div><div></div><div></div><div></div></div>`;
-        console.log(results)
-        
-
 
         for (let i = 0; i < results.length; i++) {
             if (results[i].attributes[0].terms[0].name.toLowerCase() === cont.className.split(" ")[0]) {
-                console.log(results[i])
                 
                 price = results[i].prices.price / 100
                 if (results[i].onSale) {
