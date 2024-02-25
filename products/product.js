@@ -2,7 +2,7 @@ const productMain = document.querySelector(".product_main");
 const querryString = document.location.search;
 const params = new URLSearchParams(querryString);
 const id = params.get("id");
-const url = "http://cms-ca.local/wp-json/wc/store/products/" + id;
+const url = "http://cms.drivvoll.no/wp-json/wc/store/products/" + id;
 
 async function fetchProduct() {
   try {
@@ -23,7 +23,7 @@ async function fetchProduct() {
         <div class="product_info">
           <h2 class="h2">${json.name}</h2>
           <p class="p">
-          ${json.description}
+          ${json.images[0].alt}
           <br>
           <br>
           Genre: ${json.attributes[0].terms[0].name}<br>

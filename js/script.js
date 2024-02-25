@@ -1,4 +1,4 @@
-const url = "http://cms-ca.local/wp-json/wc/store/products/"
+const url = "http://cms.drivvoll.no/wp-json/wc/store/products/"
 const carouselContainer = document.querySelector(".carousel-container")
 const movieCategories = ["top rated", "action", "comedy", "horror", "drama", "kids"]
 carouselContainer.innerHTML = "";
@@ -48,11 +48,11 @@ async function makeApiCall(cont) {
                     <img 
                         src="${results[i].images[0].src}"
                         alt = "${results[i].name}"
-                        class="carousel_img full_img" title = "${results[i].name}. ${results[i].description} NOK: ${price},-" /> 
+                        class="carousel_img full_img" title = "${results[i].name}. ${results[i].images[0].alt} NOK: ${price},-" /> 
                 <img
                 src="${results[i].images[0].src}"
                 alt="${results[i].name}"
-                class="carousel_img cut_img" title="${results[i].name}. ${results[i].description} NOK: ${price},-" />
+                class="carousel_img cut_img" title="${results[i].name}. ${results[i].images[0].alt} NOK: ${price},-" />
                 </a >
                 </li > `
             }
@@ -83,11 +83,11 @@ async function getTopRated() {
                     <img
                         src="${results[i].images[0].src}"
                         alt="${results[i].title}"
-                        class="carousel_img full_img" title="${results[i].name}. ${results[i].description} NOK: ${price},-" />
+                        class="carousel_img full_img" title="${results[i].name}. ${results[i].images[0].alt} NOK: ${price},-" />
                     <img
                         src="${results[i].images[0].src}"
                         alt="${results[i].title}"
-                        class="carousel_img cut_img" title="${results[i].name}. ${results[i].description} NOK: ${price},-" />
+                        class="carousel_img cut_img" title="${results[i].name}. ${results[i].images[0].alt} NOK: ${price},-" />
                 </a>
                </li> `
             }
