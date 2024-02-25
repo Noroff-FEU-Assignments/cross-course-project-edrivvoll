@@ -1,4 +1,4 @@
-const url = "http://cms.drivvoll.no/wp-json/wc/store/products/"
+const url = "https://cms.drivvoll.no/wp-json/wc/store/products/"
 const carouselContainer = document.querySelector(".carousel-container")
 const movieCategories = ["top rated", "action", "comedy", "horror", "drama", "kids"]
 carouselContainer.innerHTML = "";
