@@ -14,3 +14,14 @@ This website contains theese pages:
 - Movie
 - About
 - Contact
+
+## Built With
+This site is bulit with:
+- HTML
+- css
+- JavaScript
+
+## Getting Started
+To get this started open index.html and navigate from there.
+
+### Installing
