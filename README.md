@@ -18,10 +18,49 @@ This website contains theese pages:
 ## Built With
 This site is bulit with:
 - HTML
-- css
+- CSS
 - JavaScript
 
 ## Getting Started
-To get this started open index.html and navigate from there.
 
 ### Installing
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/Noroff-FEU-Assignments/cross-course-project-edrivvoll.git
+    ```
+
+2. **Navigate to the project directory**:
+    ```sh
+    cd cross-course-project-edrivvoll
+    ```
+
+  ### Running
+
+1. **Run the development server**:
+    ```sh
+    npm start
+    ```
+
+## Usage
+
+Once the development server is running, you can access the application in your web browser at `http://localhost:3000`.
+
+## Contributing
+
+We welcome contributions to the project. To contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add your feature'`).
+5. Push to the branch (`git push origin feature/your-feature`).
+6. Open a Pull Request.
+
+## Contact
+
+For any questions or feedback, please contact:
+
+- **Email**: espen@drivvoll.no
