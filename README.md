@@ -27,26 +27,25 @@ This site is bulit with:
 
 To run this project locally, follow these steps:
 
-1. **Clone the repository**:
-    ```sh
-    git clone https://github.com/Noroff-FEU-Assignments/cross-course-project-edrivvoll.git
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/edrivvoll/Semester-Project-1.git
     ```
 
-2. **Navigate to the project directory**:
-    ```sh
-    cd cross-course-project-edrivvoll
+2. Navigate to the project directory:
+    ```bash
+    cd Semester-Project-1
     ```
 
-  ### Running
+### Running
 
-1. **Run the development server**:
-    ```sh
-    npm start
-    ```
+1. Open the `index.html` file:
+    Simply open the `index.html` file in your web browser to view the website.
 
 ## Usage
 
-Once the development server is running, you can access the application in your web browser at `http://localhost:3000`.
+Once you have the project files, you can open the `index.html` file in any web browser to view and interact with the application.
+
 
 ## Contributing
 
@@ -63,4 +62,4 @@ We welcome contributions to the project. To contribute, please follow these step
 
 For any questions or feedback, please contact:
 
-- **Email**: espen@drivvoll.no
+- Email: espen@drivvoll.no
