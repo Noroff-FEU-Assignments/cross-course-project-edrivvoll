@@ -1,3 +1,3 @@
 # Square Eyes
 
-![image](
+![image](./images/SquareEyes_Logo.png)
