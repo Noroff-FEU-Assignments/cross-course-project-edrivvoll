@@ -29,12 +29,12 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/edrivvoll/Semester-Project-1.git
+    git clone https://github.com/edrivvoll/cross-course-project-edrivvoll.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd Semester-Project-1
+    cd cross-course-project-edrivvoll
     ```
 
 ### Running
