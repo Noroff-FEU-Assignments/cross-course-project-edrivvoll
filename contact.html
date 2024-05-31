@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SquareEyes Contact Page" />
+    <title>SquareEyes Contact</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/5e248e42c9.js"
+      crossorigin="anonymous"
+    ></script>
+    
+  </head>
+  <body>
+    <header class="clearfix">
+      <a href="index.html"
+        ><img
+          src="images/SquareEyes_Logo.png"
+          alt="SquareEyes Logo"
+          class="header_logo"
+      /></a>
+      <input class="input_checkbox" type="checkbox" id="menu-checkbox" />
+      <label for="menu-checkbox" aria-labelledby="menu-checkbox"
+        ><i class="fa-solid fa-bars input_checkbox" id="fa"></i
+      ></label>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="active"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="contact_container">
+        <h1>contact</h1>
+        <div class="contact_form">
+          <form action="submit.php" method="post">
+            <label class="contact_content" for="name">Name:</label>
+            <input class="contact_content" type="text" id="name" name="name" />
+            <label class="contact_content" for="email">E-mail:</label>
+            <input
+              class="contact_content"
+              type="email"
+              id="email"
+              name="email"
+            />
+            <label class="contact_content" for="subject">Subject:</label>
+            <input
+              class="contact_content"
+              type="text"
+              id="subject"
+              name="subject"
+            />
+            <label class="contact_content" for="message">Message:</label>
+            <textarea
+              class="contact_content"
+              name="textarea"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <!-- <input type="submit" class="cta" value="Submit" /> -->
+            <br>
+            <a href="/index.html" class="cta">Submit</a>
+          </form>
+        </div>
+        <div class="contact_address">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4449.799147032507!2d10.73134738907515!3d59.919435001943846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416dd779ba357b%3A0x677038c9acc2591c!2sDet%20kongelige%20slott!5e0!3m2!1sno!2sno!4v1676408995214!5m2!1sno!2sno"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <h2>Address:</h2>
+          <p>Slottsplassen 1</p>
+          <p>0010 Oslo</p>
+          <p>NORWAY</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright &copy;</p>
+    </footer>
+  </body>
+</html>
